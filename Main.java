@@ -9,23 +9,23 @@ public class Main {
         // principal question
 
         Scanner scaner = new Scanner(System.in);
+        byte turningInToNumber = 100;
+        byte monthsPerYear = 12;
 
-
-        System.out.print("Prinicpal:");                     //P
+        System.out.print("Prinicpal:");                                                       //P
         int principal = scaner.nextInt();
 
         // annual interest rate question
         System.out.print("annual interest rate:");
-        double monthlyInterest = scaner.nextDouble() / (100*12);            //r
+        double monthlyInterest = scaner.nextDouble() / turningInToNumber / monthsPerYear;     //r
 
         // period (years)
         System.out.print("period (years):");
-        //n
-        byte years = scaner.nextByte();
-        int numberOfPayments = years * 12;
+        byte years = scaner.nextByte();                                                       //n
+        int numberOfPayments = years * monthsPerYear;
 
         // finial result
-        double z = 1 + monthlyInterest;                  // z= r*(1+r)
+        double z = 1 + monthlyInterest;                    // z= r*(1+r)
         double zz = Math.pow(z, numberOfPayments);        // zz= r*(1+r)ˇn
         int mortage = (int)(principal* ((monthlyInterest * zz) / (zz-1)));
 
@@ -38,6 +38,3 @@ public class Main {
         System.out.println("Mortgage:" + mortageFormated);
     }
 }
-
-
-
