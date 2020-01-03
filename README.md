@@ -1,2 +1,2 @@
 # Mortgage-calculator
-**I will add comments to code later** :-)
+**I will add comments to code later** :-).
