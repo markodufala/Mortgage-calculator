@@ -11,33 +11,51 @@ public class Main {
         Scanner scaner = new Scanner(System.in);
         byte turningInToNumber = 100;
         byte monthsPerYear = 12;
+        int principal;
+        while (true){
+            System.out.print("Prinicpal (1K€ - 1M€):");                                                       //P
+            principal = scaner.nextInt();
+            if (principal >= 1000 && principal <= 1_000_000)
+                break;
+            System.out.println("Enter a value between 1000 and 1000 000.");
+        }
 
-        System.out.print("Prinicpal:");                                                       //P
-        int principal = scaner.nextInt();
+        double monthlyInterest;
+        double annualInterest;
+        while(true){
+            // annual interest rate question
+            System.out.print("annual interest rate (1 - 30):");
+            annualInterest = scaner.nextDouble();
+            if (annualInterest > 1 && annualInterest <= 30){
+                monthlyInterest = annualInterest / turningInToNumber / monthsPerYear;     //r
+                break;
+            }
+            System.out.println("Enter value greater than 1 and less or equal than 30.");
+        }
 
-        // annual interest rate question
-        System.out.print("annual interest rate:");
-        double monthlyInterest = scaner.nextDouble() / turningInToNumber / monthsPerYear;     //r
-
-        // period (years)
-        System.out.print("period (years):");
-        byte years = scaner.nextByte();                                                       //n
-        int numberOfPayments = years * monthsPerYear;
-
+        byte years;
+        int numberOfPayments;
+        while(true) {
+            // period (years)
+            System.out.print("period (years):");
+            years = scaner.nextByte();                                                       //n
+            if (years >= 1 && years <= 30) {
+                numberOfPayments = years * monthsPerYear;
+                break;
+            }
+            System.out.println("enter value between 1 and 30.");
+        }
         // finial result
         double z = 1 + monthlyInterest;                    // z= r*(1+r)
         double zz = Math.pow(z, numberOfPayments);        // zz= r*(1+r)ˇn
         int mortage = (int)(principal* ((monthlyInterest * zz) / (zz-1)));
 
         double mortageT = principal * (monthlyInterest*Math.pow(1 + monthlyInterest, numberOfPayments))
-                        / (Math.pow(1 + monthlyInterest, numberOfPayments) - 1);
+                / (Math.pow(1 + monthlyInterest, numberOfPayments) - 1);
 
 
 
-       String mortageFormated = NumberFormat.getCurrencyInstance().format(mortageT);
+        String mortageFormated = NumberFormat.getCurrencyInstance().format(mortageT);
         System.out.println("Mortgage:" + mortageFormated);
     }
 }
-
-
-
