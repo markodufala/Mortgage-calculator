@@ -155,3 +155,18 @@ public class Main {
         }
     }
 }
+
+
+
+
+
+
+
+        while (true) {
+            if ((unitSystemInput.equals("imperial"))) {
+                System.out.print("Do you want to convert to imperial values or metric unit system?:");
+                convertingBetween = scanner.nextLine().toLowerCase().trim();
+                System.out.println(convertingBetween);
+                break;
+            }
+        }
