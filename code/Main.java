@@ -59,3 +59,45 @@ public class Main {
         System.out.println("Mortgage:" + mortageFormated);
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+package com.company;
+
+import java.util.Scanner;
+
+public class Main {
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        String unitSystemInput;
+
+        
+
+
+        //System.out.println(unitSystemInput);
+
+
+        while (true){
+            System.out.print("From wich unit system you want to convert?:");
+            // First String input
+            unitSystemInput = scanner.nextLine().toLowerCase().trim();
+            if (unitSystemInput.equals("metric"))
+                System.out.println("Do you want to convert to metric values or imperial unit system ?");
+            else if (unitSystemInput.equals("imperial"))
+                System.out.println("Do you want to convert to imperial values or metric unit system ?");
+            else if (!unitSystemInput.equals("metric") && !unitSystemInput.equals("imperial"))
+                break;
+        }
+        System.out.println("Invalid input! Enter value again:");
+    }
+}
