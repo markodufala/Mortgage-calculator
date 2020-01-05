@@ -17,7 +17,7 @@ public class Main {
             principal = scaner.nextInt();
             if (principal >= 1000 && principal <= 1_000_000)
                 break;
-            System.out.println("Enter a value between 1000 and 1000 000.");
+            System.out.println("Enter a value between 1 000 and 1 000 000.");
         }
 
         double monthlyInterest;
