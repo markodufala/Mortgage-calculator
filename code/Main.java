@@ -101,3 +101,57 @@ public class Main {
         System.out.println("Invalid input! Enter value again:");
     }
 }
+
+
+
+
+
+
+
+
+package com.company;
+
+import java.util.Scanner;
+
+public class Main {
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        String unitSystemInput;
+        String convertingBetween;
+        boolean firstStringAnswer;
+
+
+
+        //System.out.println(unitSystemInput);
+
+
+        while (true){
+            System.out.print("From wich unit system you want to convert?:");
+            // First String input
+            unitSystemInput = scanner.nextLine().toLowerCase().trim();
+
+            if ((unitSystemInput.equals("metric")) || (unitSystemInput.equals("imperial"))) {
+                System.out.println(unitSystemInput);
+                break;
+            }
+            System.out.println("Invalid input! Enter value again. Write Metric or Imperial.:");
+        }
+        while (true){
+            if (unitSystemInput.equals("metric")){
+                System.out.println("Do you want to convert to metric values or imperial unit system ?");
+                convertingBetween = scanner.nextLine().toLowerCase().trim();
+                if ((convertingBetween.equals("metricvalues")) || (convertingBetween.equals("imperialunitsystem")));{
+                    System.out.println(convertingBetween);
+                    break;
+                }
+            }else if (unitSystemInput.equals("imperial")){
+                System.out.println("Do you want to convert to imperial values or metric unit system ?");
+                convertingBetween = scanner.nextLine().toLowerCase().trim();
+                System.out.println(convertingBetween);
+                break;
+            }
+            System.out.println("Invalid input! Enter value again:");
+        }
+    }
+}
